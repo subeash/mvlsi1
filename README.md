@@ -6,40 +6,27 @@
 
 <b>Discipline | <b> Electronic Engineering 
 :--|:--|
-<b> Lab | <b> **Digital Signal processing virtual laboratory**
-<b> Experiment|     <b> **Study of Discrete Fourier Transform (DFT) and its inverse**
+<b> Lab | <b> **Microelectronics and VLSI Engineering Laboratory**
+<b> Experiment|     <b> **MOS Capacitor**
 
 
 ### About the Experiment 
 
 <!--Fill a brief description of this experiment here-->
 
-<b>Name of Developer | <b> **Prof. Gautam Saha**
+<b>Name ofSubject-matter expert | <b> **Prof. C. K. Maiti**
 :--|:--|
 <b> Institute | <b>  **Indian Institute of Technology Kharagpur**
-<b> Email id|     <b>  **gsaha @ ece.iitkgp.ac.in**
+<b> Email id|     <b>  **ckm@ece.iitkgp.ernet.in**
 <b> Department |  **Electronics & Electrical Communication Engineering**
 <b>Webpage| <b> https://www.iitkgp.ac.in/department/EC/faculty/ec-gsaha
 
-<b>Name of Developer | <b> **Prof. Arijit De**
-:--|:--|
-<b> Institute | <b>  **Indian Institute of Technology Kharagpur**
-<b> Email id|     <b>  **rijit@ece.iitkgp.ernet.in**
-<b> Department |  **Electronics & Electrical Communication Engineering**
-<b>Webpage| <b> https://www.iitkgp.ac.in/department/EC/faculty/ec-arijit
-
-<b>Name of Developer | <b> **Prof. Shailendra Kumar Varshney**
-:--|:--|
-<b> Institute | <b>  **Indian Institute of Technology Kharagpur**
-<b> Email id|     <b>  **skvarshney@ece.iitkgp.ernet.in**
-<b> Department |  **Electronics & Electrical Communication Engineering**
-<b>Webpage| <b> https://www.iitkgp.ac.in/department/EC/faculty/ec-skvarshney
 
 
 ### Contributors List
 
 SrNo | Name | VLabs Developer or Integration Engineer | Designation | Department| Institute
 :--|:--|:--|:--|:--|:--|
-1 | **Anirban das** |Developer | Junior Project Assistant | Department of Mechanical Engineering | IIT Kharagpur |
-2 | **Chandan Mishra** |Developer | Project Scientist | Department of Mechanical Engineering | IIT Kharagpur | 
+1 | **Debasish Das Adhikary** |Developer | Junior Project Assistant | Department of Mechanical Engineering | IIT Kharagpur |
+2 | **Aditya Kameswara Rao Nandula** |Developer | Senior Project Scientist | Department of Mechanical Engineering | IIT Kharagpur | 
 3 | **Subhasis Mahata** |AWS Integration Engineer | Senior Project Scientist | Department of Mechanical Engineering | IIT Kharagpur | 
