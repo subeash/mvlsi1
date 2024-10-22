@@ -1,357 +1,443 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <title>Study of Discrete Fourier Transform (DFT) and its inverse</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/adi.css">
-    <link rel="stylesheet" href="./css/adik.css">
-    <!--
-    This HTML file is designed and developed by
-    Aditya Kameswara Rao Nandula
-    Senior Research Fellow,
-    Virtual Labs IIT Kharagpur.
-    LinkedIn: https://www.linkedin.com/in/akraonandula/
-    Updated on: 06-05-2022
-  -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71919978-6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<html lang="en"><!--html tag start-->
+<head>
+  <title>PMOS Capacitor Band Diagram</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui/1.12.1/themes/base/jquery-ui.css">   
 
-  gtag('config', 'UA-71919978-6');
+  <link rel="stylesheet" href="adik.css"> <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>   
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.min.js"></script>   
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>   
+
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>   
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"   
+ />
+  <script src="process_Trainer_updated.js"></script> </head>
+<body><!--body tag start-->
+    <div class="container p-3 my-3 text-primary text-center border"><!--First Container under body tag start-->
+        <div class="row"><!--First row under 1st container start-->
+            <div class="col-md-3"><!--First col under 1st row start-->
+                <img class="img-fluid rounded" src="./images/vlabs.png" alt="VLabs logo">
+            </div><!--First col under 1st row end-->
+            <div class="col-md-6"><!--2nd col under 1st row start-->
+                <p class="display-1"> <b> Virtual Labs <br> IIT Kharagpur </b> </p>
+            </div><!--2nd col under 1st row end-->
+            <div class="col-md-3"><!--3rd col under 1st row start-->
+                <img class="img-fluid rounded" src="./images/iitkgp.png" alt="IIT KGP Logo" >
+            </div><!--3rd col under 1st row end-->
+        </div><!--First row under 1st container end-->
+    
+        <hr>
+        <div class="row"><!--2nd row under 1st container start-->
+            <div class="col-md-3"><!--First col under 2nd row start-->
+
+            </div><!--First col under 2nd row end-->
+            <div class="col-md-6"><!--2nd col under 2nd row start-->
+                <p class="h1"> <b>PMOS Capacitor Band Diagram</b> </p>
+            </div><!--2nd col under 2nd row end-->
+            <div class="col-md-3"><!--3rd col under 2nd row start-->
+
+            </div><!--3rd col under 2nd row end-->
+        </div><!--2nd row under 1st container end-->
+        <hr>
+        <div class="d-flex p-1 text-primary"><!--3rd row under 1st container start-->
+          <div class="p-1" > <p class="h4"><a href="../index.html"> <span class="LN"> <b> Microelectronics and VLSI Engineering Laboratory </b></span> --> </a></p></div>
+          <div class="p-1"> <p class="h4"><a href="./index.html"> <span class="ExpN"> <b> PMOS Capacitor Band Diagram</b> </span> </a></p></div>
+        </div><!--3rd row under 1st container end-->
+    </div><!--First Container under body tag end-->
+    
+    <div class="container p-3 my-5 text-primary text-center border"><!--2nd Container under body tag start-->
+        <div class="row"><!--First row under 2nd container start-->
+
+            <ul class="nav nav-pills nav-justified">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Introduction</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../aim.html">Objective</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../prequiz.html">Pre Quiz</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../theory.html">Theory</a>
+                </li>
+				<li class="nav-item">
+                  <a class="nav-link" href="../procedure.html">Procedure</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./index.html">Simulation</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../postquiz.html">Post Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../feedback.html">Feedback</a>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../references.html">References</a>
+                  </li>
+
+              </ul>
+        </div><!--First row under 2nd container end-->
+    </div><!--2nd Container under body tag end-->
+	
+    <div class="container p-3 my-5 text-left border"><!--3rd Container under body tag start-->
+      <div class="row"><!--First row under 3rd container start-->
+        <div class="col-md-1"></div><!--First col under 3rd container start& end-->
+        <div class="col-md-10"><!--2nd col under 3rd container start-->
+            <p class="text-center bg-success"> <a class="nav-link" data-bs-toggle="tab"  id="instcontrol" style="background-color:#128BD9"  ><span class=" h3 text-dark"> Instructions </span></a>
+              <div id="inst" style="display:block;height:200px;overflow-y:auto;text-align:justify">
+					
+					<!-- INSRTUCTION START -->
+				
+	<ol>
+    
+					<h4>Input Parameters</h4>
+					<ul>
+						<li><strong>ϕm, ϕs (Work Function of the Metal and Semiconductor):</strong> Enter the values in electron volts (eV).</li>
+						<li><strong>χ (Electron Affinity):</strong> Enter the electron affinity in eV.</li>
+						<li><strong>tox, tox2 (Oxide Thickness):</strong> Enter the oxide thickness in nanometers (nm).</li>
+						<li><strong>εox, εox2 (Dielectric Constants of the Oxides):</strong> Enter the dielectric constants.</li>
+						<li><strong>Eg (Bandgap Energy):</strong> Enter the bandgap energy using the provided formula if needed.</li>
+						<li><strong>Nd (Donor Concentration)</strong> and <strong>Na (Acceptor Concentration):</strong> Enter the concentration values in cm³.</li>
+						<li><strong>T (Temperature):</strong> Enter the operating temperature in Kelvin (K).</li>
+						<li><strong>εsemi (Semiconductor Dielectric Constant):</strong> Enter the value.</li>
+						<li><strong>V (Voltage):</strong> Input the voltage applied across the device.</li>
+						<li><strong>Material Selection (Si, Ge, GaAs):</strong> Choose the material of the semiconductor.</li>
+					</ul>
+
+					<h4>Submit</h4>
+					<p>Once all parameters are entered, click the <strong>Submit</strong> button to run the simulation.</p>
+
+					<h4>View Results</h4>
+					<ul>
+						<li><strong>Band Diagram:</strong> Observe the energy levels within the semiconductor, including the conduction band edge, valence band edge, and Fermi level.</li>
+						<li><strong>Charge Density:</strong> View the distribution of charge across the semiconductor, including the contributions from different carriers (e.g., holes, electrons).</li>
+						<li><strong>Electric Field:</strong> Analyze the electric field across the device as a function of position.</li>
+					</ul>
+
+					<h4>Explore Different Regions</h4>
+					<p>Use the <strong>Accumulation</strong>, <strong>Flatband</strong>, <strong>Depletion</strong>, <strong>Threshold</strong>, and <strong>Inversion</strong> buttons to explore different operational regions of the PMOS transistor.</p>
+
+					<h4>Additional Notes</h4>
+					<ul>
+						<li>The right side of the screen displays calculated parameters such as the built-in potential (ϕs), maximum depletion width (xP), surface potential (ψs), and threshold voltage (VT).</li>
+						<li>The calculated charge (Q) and electric field (Eox) in the oxide layer are also shown.</li>
+						<li>Make sure to adjust and explore the parameters to see how they affect the band diagram, charge density, and electric field.</li>
+					</ul>
+   
+	</ol>
+				<!-- INSTRUCTION STOP -->	
+					
+		   </div>
+            </p> 
+          </div><!--2nd col under 3rd container end-->
+		  
+        <div class="col-md-1"></div><!--3rd col under 3rd container start& end-->
+      </div><!--First row under 3rd container end-->
+    </div><!--3rd Container under body tag end-->
+	
+   <!--simulation start -->
+   <div>
+    <body style="background-color:white" onload="moscap();"><div id="MathJax_Message" style="display: none;"></div>
+
+
+<style>
+h3 {margin-left:1cm}
+</style>
+
+<script type="text/x-mathjax-config;executed=true">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+  });
 </script>
-  </head>
-  <body>
-    <div class="container ce">
-      <div class="container">
-        <div class="row">&nbsp;</div>
-        <div class="row">
-          <div class="col-sm-12">
-            <header>
-              <div class="row ce ">
-                <div class="col-sm-3 "> <img src="./images/vlabs.png" class="img-fluid pi1"
-                    alt="VLabs Logo">
-                  </div>
-                <div class="col-sm-6  tex">
-                  <h1><strong> Virtual Labs <br>
-                      IIT Kharagpur</strong></h1>
-                </div>
-                <div class="col-sm-3 ">
-                   <img src="./images/iitkgp.png" class=" img-fluid pi2" alt="IIT Kharagpur Logo">
-                </div>
-              </div>
+<script type="text/javascript" src="./js/MathJax.js"></script>
+	
 
-              <hr>
-              <div class="row">
-                <div class="col-sm-12">
-                    <h3>Study of Discrete Fourier Transform (DFT) and its inverse</h3>
-                </div>
-              </div>
-              <hr>
-            </header>
+<script language="javascript" type="text/javascript" src="./js/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="./js/jquery.flot.min.js"></script>
+
+<script language="JavaScript">
+
+var Ev = [];  //valence band energy
+// d arrays used for plotting
+var d1 = [];  //Ev
+var d2 = [];  //EF
+var d3 = [];  //Ec
+var d4 = [];  //n
+var d5 = [];  //p
+var d6 = [];  //rho
+var d7 = [];  //Electric field
+
+echarge = 1.60217733E-19;
+kb = 1.380658E-23/echarge;  //eV/K
+
+function moscap() { 
+ tox = eval(data.tox.value)*1E-9;
+ na = 1E6*eval(data.na.value);
+ Va = eval(data.V.value); //applied voltage
+ if (Math.abs(Va)<1E-10) {V = 0; data.V.value=0;}
+ Nv = 1E6*eval(data.Nv.value);
+ Nc = 1E6*eval(data.Nc.value);
+ T = eval(data.T.value);
+ Eg = eval(data.Eg.value);
+ phi_m = eval(data.phi_m.value);
+ chi_s = eval(data.chi_s.value);
+ document.getElementById('Eg_txt').innerHTML=Eg.toPrecision(3);
+ eps = 8.854187817E-12*eval(data.eps.value);
+ eps_ox = 8.854187817E-12*eval(data.eps_ox.value);
+ ni=Math.sqrt(Nc*Nv*Math.pow(T/300,3))*Math.exp(1.6022E-19*(-Eg)/(2*1.380658E-23*T));
+ document.getElementById('ni_txt').innerHTML=(ni/1E6).toPrecision(3);
+ Ev0 = kb*T*Math.log(na/Nv); //Ev - EF  far from the oxide
+ Ec0 = kb*T*Math.log(ni*ni/(Nc*na)); //EF - Ec far from the oxide
+ phi_s = chi_s + Eg + Ev0; // work function of semiconductor 
+ document.getElementById('phi_s_txt').innerHTML=(phi_s).toPrecision(3);
+ Vfb = phi_m  - phi_s; // flat band voltage
+ document.getElementById('Vfb_txt').innerHTML=(Vfb).toPrecision(3);
+ VT = 2*tox*Math.sqrt(eps*na*1.380658E-23*T*Math.log(na/ni))/eps_ox+2*kb*T*Math.log(na/ni);  //threshold voltage in depletion approximation
+ document.getElementById('VT_txt').innerHTML=(VT+Vfb).toPrecision(3);
+ xp = 2*Math.sqrt(eps*kb*T*Math.log(na/ni)/(echarge*na)); // maximum depletion width in depletion approximation
+ document.getElementById('xp_txt').innerHTML=(1E6*xp).toPrecision(3);
+ cox= eps_ox/tox;
+ V = Va - phi_m + phi_s; //zero bias should result in a built-in voltage corresponding to the work function difference
+ Es0 = -tox*echarge*na/eps_ox + echarge*na*Math.sqrt(tox*tox/(eps_ox*eps_ox) + 2*(Va - Vfb)/(echarge*na*eps)); //Es from the depletion approximation
+ document.getElementById('Es0_txt').innerHTML=Es0.toPrecision(3);
+ VIB0 = eps*Es0*Es0/(2*echarge*na);  //V_IB from the depletion approximation
+ document.getElementById('VIB0_txt').innerHTML=VIB0.toPrecision(3);
+
+
+/* This section starts with somewhat arbitray initial conditions for Ev(x) and its derivative
+   dEv(x)/dx inside the bulk of the semiconductor and then integrates the Possion equation
+   to the left to calculate the voltage at the semiconductor/oxide interface and then the 
+   voltage at the gate. The calculated voltage at the gate is compared to the desired voltage at the gate 
+   the initial conditions are adjusted to get the calculated value closer to the desired value.
+*/
+  xr = 3.6*xp;   //right position for binary search
+  xm = 1.8*xp; //middle position for binary search
+  xl = 0;      //left position for binary search
+  for (j=0; j<16; j++) {
+    Ev = Ev0;
+    dEvdx = 0;
+    if (V>0) {dEvdx = 1e3; } 
+    if (V<0) {dEvdx = -1e3; } 
+    dx = xm/300;
+    for (i=0; i<301; i++) { //numerical integration using the midpoint method
+      x = xm*(1-i/300);
+      Ev_mid = Ev - dEvdx*dx/2;  //Ev at the midpoint
+      rho_mid = -na - Nc*Math.exp(-(Eg+Ev_mid)/(kb*T)) + Nv*Math.exp(Ev_mid/(kb*T));
+      dEvdx_mid = dEvdx - echarge*rho_mid*0.5*dx/eps;
+      Ev = Ev - dEvdx_mid*dx;
+      dEvdx = dEvdx - echarge*rho_mid*dx/eps;
+    }
+    Vs = Ev0 - Ev;
+    Es = dEvdx;
+    Eox = Es*eps/eps_ox;
+    Vtmp = Vs + Eox*tox;
+
+//binary search
+    if (V<0) {  
+      if (Vtmp > V) {xl = xm; xm = (xr + xl)/2; }
+      if (Vtmp < V) {xr = xm; xm = (xr + xl)/2; } 
+    }
+    else {
+      if (Vtmp < V) {xl = xm; xm = (xr + xl)/2; }
+      if (Vtmp > V) {xr = xm; xm = (xr + xl)/2; } 
+    }
+
+  } // end j
+
+/* This section solves the Possion equation one more time using the optimized initial conditions
+   and saves the data in arrays so it can be plotted.
+*/
+    Ev = Ev0;
+    dEvdx = 0;
+    if (V>0) {dEvdx = 1e3; } 
+    if (V<0) {dEvdx = -1e3; } 
+    dx = xm/300;
+    for (i=0; i<301; i++) { //numerical integration using the midpoint method
+      x = xm*(1-i/300);
+      Ev_mid = Ev - dEvdx*dx/2;  //Ev at the midpoint
+      rho_mid = -na - Nc*Math.exp(-(Eg+Ev_mid)/(kb*T)) + Nv*Math.exp(Ev_mid/(kb*T));
+      dEvdx_mid = dEvdx - echarge*rho_mid*0.5*dx/eps;
+      Ev = Ev - dEvdx_mid*dx;
+      dEvdx = dEvdx - echarge*rho_mid*dx/eps;
+
+      d1[i] = [1E6*x,Ev];
+      d3[i] = [1E6*x,Ev+Eg];
+      n = Nc*Math.exp(-(Eg+Ev)/(kb*T))/1E21;
+      p = Nv*Math.exp(Ev/(kb*T))/1E21
+      d4[i] = [1E6*x,n];
+      d5[i] = [1E6*x,p];
+      d6[i] = [1E6*x,p-n-na/1E21];
+      d7[i] = [1E6*x,dEvdx*1E-6];
+    }
+    d4[301] = [0,0]; d4[302] = [-1E6*(0.25*xp+tox),0];
+    d5[301] = [0,0]; d5[302] = [-1E6*(0.25*xp+tox),0];
+    d6[301] = [0,0]; d6[302] = [-1E6*tox,0]; d6[303] = [-1E6*tox,-d6[300][1]];  d6[304] = [-1E6*(tox-xm/100),-0.92*d6[300][1]]; 
+    d6[305] = [-1E6*(tox+xm/100),-0.92*d6[300][1]]; d6[306] = [-1E6*tox,-d6[300][1]]; d6[307] = [-1E6*tox,0]; d6[308] = [-1E6*(0.25*xp+tox),0];
+    d2[0] = [1E6*xm,0];
+    d2[1] = [0,0];
+    VIB = Ev0 - Ev;
+    Es = dEvdx;
+    Eox = Es*eps/eps_ox;
+    Q = -Es*eps; //the charge on the semiconductor
+    d7[301] = [0,Eox*1E-6]; d7[302]=[-tox*1E6,Eox*1E-6];  d7[303] = [-tox*1E6,0]; d7[304] = [-1E6*(0.25*xp+tox),0];
+    Vtmp = VIB + Eox*tox;
+    d2[3] = null;
+    d2[4] = [-1E6*tox,-Va];
+    d2[5] = [-1E6*(0.25*xp+tox),-Va];
+    d3[301] = [0,d3[300][1]+1];
+    d3[302] = [-1E6*tox,d3[300][1]+1- Eox*tox];
+    d3[303] = [-1E6*tox,-Vtmp];
+    d1[301] = [0,d1[300][1]-1];
+    d1[302] = [-1E6*tox,d1[300][1]-1- Eox*tox];
+    d1[303] = [-1E6*tox,-Vtmp];
+    if (V==0) { //
+      d1[0] = [1E6*xp,Ev0]; d2[0] = [1E6*xp,0]; d3[0] = [1E6*xp,Ev0+Eg];
+      d4[0] = [1E6*xp,0]; d5[0] = [1E6*xp,na/1E21]; d6[0] = [1E6*xp,0]; 
+      d7.length = 0;
+      d7[0] = [1E6*xp,0]; d7[1] = [-1E6*(0.25*xp+tox),0];
+    }
+
+  document.getElementById('Vs_txt').innerHTML=(VIB).toPrecision(3);
+  document.getElementById('Vtmp_txt').innerHTML=(Vtmp + phi_m - phi_s).toPrecision(3);
+  document.getElementById('Q_txt').innerHTML=(Q).toPrecision(3);
+  document.getElementById('n0_txt').innerHTML=(d4[300][1]).toPrecision(3);
+  document.getElementById('Eox_txt').innerHTML=(Eox).toPrecision(3); 
+  document.getElementById('Es_txt').innerHTML=(Es).toPrecision(3); 
+
+//plot bands
+    var data1 = [{data: d3, color: "rgb(0,255,0)", shadowSize:0, lines: {show:true}, label: "$E_c$"}, { data: d1, color: "rgb(255,192,203)", shadowSize:0, lines: {show:true}, label: "$E_v$"}, { data: d2, color: "rgb(0,0,255)", shadowSize:0, lines: {show:true}, label: "$E_F$"}]; 
+    $.plot($("#placeholder1"), data1);
+
+//plot charge density 
+    var data2 = [{ data: d4, color: "rgb(0,255,0)", shadowSize:0, lines: {show:true}, label: "$n$"}, { data: d5, color: "rgb(255,192,203)", shadowSize:0, lines: {show:true}, label: "$p$"}, { data: d6, color: "rgb(0, 0, 255)", shadowSize:0, lines: {show:true}, label: "$\\rho$"}]; 
+    $.plot($("#placeholder_rho"), data2);
+
+//plot electric field
+    var data4 = [{ data: d7, color: "rgb(0, 0, 255)", shadowSize:0, lines: {show:true}}]; 
+    $.plot($("#placeholder_e"), data4);
+
+MathJax.Hub.Queue(['Typeset',MathJax.Hub]);  //have Mathjax process the plot legends that were redrawn
+}
+
+</script>
+
+
+<style>
+p {margin-left:1cm; margin-right:1cm;}
+p.t {margin-left:0cm; margin-right:0cm;}
+h2 {margin-left:1cm;}
+</style>
+
+  
+  
+
+
+
+<form name="data">
+<table style="border-collapse:collapse" align="center">
+<tbody><tr><td><p class="t" style="text-align:right">
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-1-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;&amp;#x03D5;&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-1" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-2" class="mjx-mrow"><span id="MJXc-Node-3" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-4" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.498em; padding-bottom: 0.498em;">ϕ</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-5" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">m</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>ϕ</mi><mi>m</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-1">\phi_m</script>&nbsp;=&nbsp;<input type="text" name="phi_m" size="10" value="4.08" spellcheck="false" data-ms-editor="true"></p></td><td> eV</td>
+
+<td><p class="t" style="text-align:right">
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-2-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;&amp;#x03C7;&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-6" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-7" class="mjx-mrow"><span id="MJXc-Node-8" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-9" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.498em;">χ</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-10" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">s</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>χ</mi><mi>s</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-2">\chi_s</script>&nbsp;=&nbsp;<input type="text" name="chi_s" size="10" value="4.05" spellcheck="false" data-ms-editor="true"></p></td><td> eV</td>
+
+</tr>
+<tr><td><p class="t" style="text-align:right">
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-3-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-11" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-12" class="mjx-mrow"><span id="MJXc-Node-13" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-14" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.374em; padding-bottom: 0.313em;">t</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-15" class="mjx-texatom" style=""><span id="MJXc-Node-16" class="mjx-mrow"><span id="MJXc-Node-17" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.189em; padding-bottom: 0.313em;">o</span></span><span id="MJXc-Node-18" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">x</span></span></span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>t</mi><mrow class="MJX-TeXAtom-ORD"><mi>o</mi><mi>x</mi></mrow></msub></math></span></span><script type="math/tex" id="MathJax-Element-3">t_{ox}</script>&nbsp;=&nbsp;<input type="text" name="tox" size="10" value="3" spellcheck="false" data-ms-editor="true"></p></td><td> nm</td>
+
+<td><p class="t" style="text-align:right">
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-4-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;&amp;#x03F5;&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-19" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-20" class="mjx-mrow"><span id="MJXc-Node-21" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-22" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.189em; padding-bottom: 0.313em;">ϵ</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-23" class="mjx-texatom" style=""><span id="MJXc-Node-24" class="mjx-mrow"><span id="MJXc-Node-25" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.189em; padding-bottom: 0.313em;">o</span></span><span id="MJXc-Node-26" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">x</span></span></span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>ϵ</mi><mrow class="MJX-TeXAtom-ORD"><mi>o</mi><mi>x</mi></mrow></msub></math></span></span><script type="math/tex" id="MathJax-Element-4">\epsilon_{ox}</script>&nbsp;=&nbsp;<input type="text" name="eps_ox" size="10" value="4" spellcheck="false" data-ms-editor="true"></p></td><td> </td>
+
+<td><p class="t" style="text-align:right"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-5-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/msub&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;300&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-27" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-28" class="mjx-mrow"><span id="MJXc-Node-29" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.085em;"><span id="MJXc-Node-30" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.251em; padding-right: 0.085em;">N</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-31" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">c</span></span></span></span><span id="MJXc-Node-32" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.436em; padding-bottom: 0.622em;">(</span></span><span id="MJXc-Node-33" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.374em; padding-bottom: 0.374em;">300</span></span><span id="MJXc-Node-34" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.436em; padding-bottom: 0.622em;">)</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>N</mi><mi>c</mi></msub><mo stretchy="false">(</mo><mn>300</mn><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-5">N_c(300)</script>&nbsp;=&nbsp;<input type="text" name="Nc" size="10" value="2.78E19" spellcheck="false" data-ms-editor="true"></p></td><td> 1/cm³</td>
+
+<td><p class="t" style="text-align:right">
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-6-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-35" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-36" class="mjx-mrow"><span id="MJXc-Node-37" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.251em; padding-right: 0.12em;">T</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math></span></span><script type="math/tex" id="MathJax-Element-6">T</script>&nbsp;=&nbsp;<input type="text" name="T" size="10" value="300" spellcheck="false" data-ms-editor="true"></p></td><td> K </td></tr>
+
+<tr><td><p class="t" style="text-align:right"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-7-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-38" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-39" class="mjx-mrow"><span id="MJXc-Node-40" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.026em;"><span id="MJXc-Node-41" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.251em; padding-right: 0.026em;">E</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-42" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.498em; padding-right: 0.003em;">g</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>E</mi><mi>g</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-7">E_g</script>&nbsp;=&nbsp;<input type="text" name="Eg" size="25" value="1.166-4.73E-4*T*T/(T+636)" spellcheck="false" data-ms-editor="true"></p></td><td> eV</td>
+
+<td><p class="t" style="text-align:right"> <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-8-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;&amp;#x03F5;&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-43" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-44" class="mjx-mrow"><span id="MJXc-Node-45" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-46" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.189em; padding-bottom: 0.313em;">ϵ</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-47" class="mjx-texatom" style=""><span id="MJXc-Node-48" class="mjx-mrow"><span id="MJXc-Node-49" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">s</span></span><span id="MJXc-Node-50" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">e</span></span><span id="MJXc-Node-51" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">m</span></span><span id="MJXc-Node-52" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.313em;">i</span></span></span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>ϵ</mi><mrow class="MJX-TeXAtom-ORD"><mi>s</mi><mi>e</mi><mi>m</mi><mi>i</mi></mrow></msub></math></span></span><script type="math/tex" id="MathJax-Element-8">\epsilon_{semi}</script>&nbsp;=&nbsp;<input type="text" name="eps" size="10" value="12" spellcheck="false" data-ms-editor="true"></p></td><td> </td>
+
+<td><p class="t" style="text-align:right"> <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-9-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;/msub&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;300&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-53" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-54" class="mjx-mrow"><span id="MJXc-Node-55" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.085em;"><span id="MJXc-Node-56" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.251em; padding-right: 0.085em;">N</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-57" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">v</span></span></span></span><span id="MJXc-Node-58" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.436em; padding-bottom: 0.622em;">(</span></span><span id="MJXc-Node-59" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.374em; padding-bottom: 0.374em;">300</span></span><span id="MJXc-Node-60" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.436em; padding-bottom: 0.622em;">)</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>N</mi><mi>v</mi></msub><mo stretchy="false">(</mo><mn>300</mn><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-9">N_v(300)</script>&nbsp;=&nbsp;<input type="text" name="Nv" size="10" value="9.84E18" spellcheck="false" data-ms-editor="true"></p></td><td> 1/cm³</td>
+
+<td><p class="t" style="text-align:right"> <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-10-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-61" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-62" class="mjx-mrow"><span id="MJXc-Node-63" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.085em;"><span id="MJXc-Node-64" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.251em; padding-right: 0.085em;">N</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.241em; padding-right: 0.071em;"><span id="MJXc-Node-65" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.498em; padding-bottom: 0.251em;">A</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>N</mi><mi>A</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-10">N_A</script>&nbsp;=&nbsp;<input type="text" name="na" size="10" value="1E17" spellcheck="false" data-ms-editor="true"></p></td><td> 1/cm³ </td></tr>
+
+</tbody></table>
+
+<table style="border-collapse:collapse" align="center">
+<tbody><tr><td><p style="text-align:center"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-11-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-66" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-67" class="mjx-mrow"><span id="MJXc-Node-68" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.313em; padding-right: 0.186em;">V</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math></span></span><script type="math/tex" id="MathJax-Element-11">V</script>&nbsp;=&nbsp;<input type="text" name="V" size="10" value="0" spellcheck="false" data-ms-editor="true"> V <br> <input type="button" value="-" onclick="data.V.value=data.V.value-0.01; moscap();"><input type="button" value="+" onclick="data.V.value=eval(data.V.value)+0.01;  moscap();"></p></td><td><p style="text-align:center"><input type="button" value="Submit" onclick="moscap();">  <input type="button" value=" Si " onclick="data.Nc.value=&#39;2.78E19&#39;; data.Nv.value=&#39;9.84E18&#39;; data.chi_s.value=&#39;4.05&#39;; data.Eg.value=&#39;1.166-4.73E-4*T*T/(T+636)&#39;; moscap();">
+<input type="button" value=" Ge " onclick="data.Nc.value=&#39;1.04E19&#39;; data.Nv.value=&#39;6.0E18&#39;; data.chi_s.value=&#39;4.0&#39;; data.Eg.value=&#39;0.7437-4.77E-4*T*T/(T+235)&#39;; moscap();">
+<input type="button" value="GaAs" onclick="data.Nc.value=&#39;4.45E17&#39;; data.Nv.value=&#39;7.72E18&#39;; data.chi_s.value=&#39;4.07&#39;; data.Eg.value=&#39;1.519-5.41E-4*T*T/(T+204)&#39;; moscap();"></p></td></tr>
+</tbody></table> 
+<p style="text-align:center"><input type="button" value="Accumulation" onclick="data.V.value=Vfb-0.2; moscap();"> <input type="button" value="Flatband" onclick="data.V.value=Vfb; moscap();"> <input type="button" value="Depletion" onclick="data.V.value=0.5*(VT+2*Vfb); moscap();"> <input type="button" value="Threshold" onclick="data.V.value=(VT+Vfb); moscap();"> <input type="button" value="Inversion" onclick="data.V.value=(VT+Vfb+0.2); moscap();"></p>
+</form>
+
+<table align="center"><tbody><tr><td>
+
+<p style="text-align:center"><b>Band diagram</b></p>
+<table align="center"><tbody><tr><td><p style="text-align:center">Energy<br>[eV]</p></td><td><div id="placeholder1" style="width: 400px; height: 300px; padding: 0px; position: relative;"><canvas class="flot-base" width="400" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 400px; height: 300px;"></canvas><div class="flot-text" style="position: absolute; inset: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; inset: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 57px; top: 282px; left: 62px; text-align: center;">0.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 57px; top: 282px; left: 138px; text-align: center;">0.05</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 57px; top: 282px; left: 214px; text-align: center;">0.10</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 57px; top: 282px; left: 290px; text-align: center;">0.15</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 57px; top: 282px; left: 366px; text-align: center;">0.20</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; inset: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 269px; left: 2px; text-align: right;">-2.5</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 235px; left: 2px; text-align: right;">-2.0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 202px; left: 2px; text-align: right;">-1.5</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 168px; left: 2px; text-align: right;">-1.0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 135px; left: 2px; text-align: right;">-0.5</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 101px; left: 6px; text-align: right;">0.0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 67px; left: 6px; text-align: right;">0.5</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 34px; left: 6px; text-align: right;">1.0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 6px; text-align: right;">1.5</div></div></div><canvas class="flot-overlay" width="400" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 400px; height: 300px;"></canvas><div class="legend"><div style="position: absolute; width: 64px; height: 62px; top: 13px; right: 19px; background-color: rgb(255, 255, 255); opacity: 0.85;"> </div><table style="position:absolute;top:13px;right:19px;;font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(255,0,0);overflow:hidden"></div></div></td><td class="legendLabel"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-12-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-69" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-70" class="mjx-mrow"><span id="MJXc-Node-71" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.026em;"><span id="MJXc-Node-72" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.449em; padding-bottom: 0.301em; padding-right: 0.026em;">E</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-73" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.226em; padding-bottom: 0.301em;">c</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>E</mi><mi>c</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-12">E_c</script></td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(0,0,255);overflow:hidden"></div></div></td><td class="legendLabel"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-13-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-74" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-75" class="mjx-mrow"><span id="MJXc-Node-76" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.026em;"><span id="MJXc-Node-77" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.449em; padding-bottom: 0.301em; padding-right: 0.026em;">E</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-78" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.226em; padding-bottom: 0.301em;">v</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>E</mi><mi>v</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-13">E_v</script></td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(0,0,0);overflow:hidden"></div></div></td><td class="legendLabel"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-14-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;F&lt;/mi&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-79" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-80" class="mjx-mrow"><span id="MJXc-Node-81" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.026em;"><span id="MJXc-Node-82" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.449em; padding-bottom: 0.301em; padding-right: 0.026em;">E</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-83" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.449em; padding-bottom: 0.301em; padding-right: 0.106em;">F</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>E</mi><mi>F</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-14">E_F</script></td></tr></tbody></table></div></div></td></tr>
+<tr><td></td><td><p style="text-align:center"><i>x</i> [μm]</p></td></tr></tbody></table>
+
+</td><td>
+
+<table align="center"><tbody><tr><td><p style="margin-left:1cm"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-15-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-84" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-85" class="mjx-mrow"><span id="MJXc-Node-86" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.026em;"><span id="MJXc-Node-87" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.251em; padding-right: 0.026em;">E</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-88" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.498em; padding-right: 0.003em;">g</span></span></span></span><span id="MJXc-Node-89" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>E</mi><mi>g</mi></msub><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-15">E_g=</script> <span id="Eg_txt">1.12</span>&nbsp;eV</p></td><td><p style="margin-left:1cm"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-16-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-90" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-91" class="mjx-mrow"><span id="MJXc-Node-92" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-93" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">n</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-94" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.313em;">i</span></span></span></span><span id="MJXc-Node-95" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>n</mi><mi>i</mi></msub><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-16">n_i=</script> <span id="ni_txt">6.40e+9</span>&nbsp;1/cm³</p></td></tr>
+<tr><td><p style="margin-left:1cm"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-17-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-96" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-97" class="mjx-mrow"><span id="MJXc-Node-98" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.026em;"><span id="MJXc-Node-99" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.251em; padding-right: 0.026em;">E</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-100" class="mjx-texatom" style=""><span id="MJXc-Node-101" class="mjx-mrow"><span id="MJXc-Node-102" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">s</span></span></span></span></span></span><span id="MJXc-Node-103" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>E</mi><mrow class="MJX-TeXAtom-ORD"><mi>s</mi></mrow></msub><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-17">E_{s}=</script> <span id="Es_txt">1.57e+7</span>&nbsp;V/m</p></td><td><p style="margin-left:1cm"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-18-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-104" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-105" class="mjx-mrow"><span id="MJXc-Node-106" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.186em;"><span id="MJXc-Node-107" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.313em; padding-right: 0.186em;">V</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-108" class="mjx-texatom" style=""><span id="MJXc-Node-109" class="mjx-mrow"><span id="MJXc-Node-110" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">s</span></span></span></span></span></span><span id="MJXc-Node-111" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>V</mi><mrow class="MJX-TeXAtom-ORD"><mi>s</mi></mrow></msub><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-18">V_{s}=</script> <span id="Vs_txt">0.831</span>&nbsp;V</p></td></tr>
+<tr><td><p style="margin-left:1cm"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-19-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;Q&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-112" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-113" class="mjx-mrow"><span id="MJXc-Node-114" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.498em; padding-bottom: 0.498em;">Q</span></span><span id="MJXc-Node-115" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>Q</mi><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-19">Q=</script> <span id="Q_txt">-0.00167</span>&nbsp;C/m²</p></td><td><p style="margin-left:1cm"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-20-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-116" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-117" class="mjx-mrow"><span id="MJXc-Node-118" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">n</span></span><span id="MJXc-Node-119" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.436em; padding-bottom: 0.622em;">(</span></span><span id="MJXc-Node-120" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">x</span></span><span id="MJXc-Node-121" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span><span id="MJXc-Node-122" class="mjx-mn MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.374em; padding-bottom: 0.374em;">0</span></span><span id="MJXc-Node-123" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.436em; padding-bottom: 0.622em;">)</span></span><span id="MJXc-Node-124" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo stretchy="false">(</mo><mi>x</mi><mo>=</mo><mn>0</mn><mo stretchy="false">)</mo><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-20">n(x=0)=</script> <span id="n0_txt">37.2</span>&nbsp;×&nbsp;10<sup>15</sup>&nbsp;1/cm³</p></td></tr>
+<tr><td><p style="margin-left:1cm"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-21-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-125" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-126" class="mjx-mrow"><span id="MJXc-Node-127" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.026em;"><span id="MJXc-Node-128" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.251em; padding-right: 0.026em;">E</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-129" class="mjx-texatom" style=""><span id="MJXc-Node-130" class="mjx-mrow"><span id="MJXc-Node-131" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.189em; padding-bottom: 0.313em;">o</span></span><span id="MJXc-Node-132" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">x</span></span></span></span></span></span><span id="MJXc-Node-133" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>E</mi><mrow class="MJX-TeXAtom-ORD"><mi>o</mi><mi>x</mi></mrow></msub><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-21">E_{ox}=</script> <span id="Eox_txt">4.70e+7</span>&nbsp;V/m</p></td><td><p style="margin-left:1cm"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-22-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext&gt;shoot&lt;/mtext&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-134" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-135" class="mjx-mrow"><span id="MJXc-Node-136" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.186em;"><span id="MJXc-Node-137" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.313em; padding-right: 0.186em;">V</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.219em; padding-right: 0.071em;"><span id="MJXc-Node-138" class="mjx-texatom" style=""><span id="MJXc-Node-139" class="mjx-mrow"><span id="MJXc-Node-140" class="mjx-mtext"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.436em; padding-bottom: 0.374em;">shoot</span></span></span></span></span></span><span id="MJXc-Node-141" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>V</mi><mrow class="MJX-TeXAtom-ORD"><mtext>shoot</mtext></mrow></msub><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-22">V_{\text{shoot}}=</script> <span id="Vtmp_txt">0.0000221</span>&nbsp;V</p></td></tr>
+<tr><td><p style="margin-left:1cm"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-23-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;&amp;#x03D5;&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-142" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-143" class="mjx-mrow"><span id="MJXc-Node-144" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-145" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.498em; padding-bottom: 0.498em;">ϕ</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-146" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">s</span></span></span></span><span id="MJXc-Node-147" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>ϕ</mi><mi>s</mi></msub><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-23">\phi_s=</script> <span id="phi_s_txt">5.05</span>&nbsp;eV</p></td><td><p style="margin-left:1cm"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-24-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;&amp;#x03D5;&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;&amp;#x03D5;&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-148" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-149" class="mjx-mrow"><span id="MJXc-Node-150" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.186em;"><span id="MJXc-Node-151" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.313em; padding-right: 0.186em;">V</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.23em; padding-right: 0.071em;"><span id="MJXc-Node-152" class="mjx-texatom" style=""><span id="MJXc-Node-153" class="mjx-mrow"><span id="MJXc-Node-154" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.498em; padding-bottom: 0.498em; padding-right: 0.06em;">f</span></span><span id="MJXc-Node-155" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.498em; padding-bottom: 0.313em;">b</span></span></span></span></span></span><span id="MJXc-Node-156" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span><span id="MJXc-Node-157" class="mjx-msubsup MJXc-space3"><span class="mjx-base"><span id="MJXc-Node-158" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.498em; padding-bottom: 0.498em;">ϕ</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-159" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">m</span></span></span></span><span id="MJXc-Node-160" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.313em; padding-bottom: 0.436em;">−</span></span><span id="MJXc-Node-161" class="mjx-msubsup MJXc-space2"><span class="mjx-base"><span id="MJXc-Node-162" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.498em; padding-bottom: 0.498em;">ϕ</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-163" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">s</span></span></span></span><span id="MJXc-Node-164" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>V</mi><mrow class="MJX-TeXAtom-ORD"><mi>f</mi><mi>b</mi></mrow></msub><mo>=</mo><msub><mi>ϕ</mi><mi>m</mi></msub><mo>−</mo><msub><mi>ϕ</mi><mi>s</mi></msub><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-24">V_{fb}=\phi_m-\phi_s=</script> <span id="Vfb_txt">-0.972</span>&nbsp;V</p></td></tr>
+<tr><td colspan="2">&nbsp;</td></tr>
+<tr><td colspan="2"><p style="text-align:center">From the depletion approximation:</p></td></tr>
+<tr><td><p style="margin-left:1cm">max<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-25-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;/msub&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-165" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-166" class="mjx-mrow"><span id="MJXc-Node-167" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.436em; padding-bottom: 0.622em;">(</span></span><span id="MJXc-Node-168" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-169" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">x</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-170" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.498em;">p</span></span></span></span><span id="MJXc-Node-171" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.436em; padding-bottom: 0.622em;">)</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><msub><mi>x</mi><mi>p</mi></msub><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-25">(x_p)</script> <span id="xp_txt">0.107</span>&nbsp;μm</p></td><td><p style="margin-left:1cm"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-26-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-172" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-173" class="mjx-mrow"><span id="MJXc-Node-174" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.186em;"><span id="MJXc-Node-175" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.313em; padding-right: 0.186em;">V</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-176" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.251em; padding-right: 0.12em;">T</span></span></span></span><span id="MJXc-Node-177" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>V</mi><mi>T</mi></msub><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-26">V_T=</script> <span id="VT_txt">0.0292</span>&nbsp;V</p></td></tr>
+<tr><td><p style="margin-left:1cm"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-27-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-178" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-179" class="mjx-mrow"><span id="MJXc-Node-180" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.026em;"><span id="MJXc-Node-181" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.251em; padding-right: 0.026em;">E</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-182" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">s</span></span></span></span><span id="MJXc-Node-183" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>E</mi><mi>s</mi></msub><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-27">E_s=</script> <span id="Es0_txt">1.58e+7</span>&nbsp;V/m</p></td><td><p style="margin-left:1cm"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-28-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-184" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-185" class="mjx-mrow"><span id="MJXc-Node-186" class="mjx-msubsup"><span class="mjx-base" style="margin-right: -0.186em;"><span id="MJXc-Node-187" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.313em; padding-right: 0.186em;">V</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-188" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.251em; padding-bottom: 0.313em;">s</span></span></span></span><span id="MJXc-Node-189" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.065em; padding-bottom: 0.313em;">=</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>V</mi><mi>s</mi></msub><mo>=</mo></math></span></span><script type="math/tex" id="MathJax-Element-28">V_s=</script> <span id="VIB0_txt">0.830</span>&nbsp;V</p></td></tr>
+</tbody></table>
+
+</td></tr><tr><td>
+
+<p style="text-align:center"><b>Charge density</b></p>
+<table><tbody><tr><td><p style="text-align:center">ρ×10<sup>-15</sup><br>[C/cm³]</p></td><td><div id="placeholder_rho" style="width: 400px; height: 300px; padding: 0px; position: relative;"><canvas class="flot-base" width="400" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 400px; height: 300px;"></canvas><div class="flot-text" style="position: absolute; inset: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; inset: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 57px; top: 282px; left: 64px; text-align: center;">0.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 57px; top: 282px; left: 140px; text-align: center;">0.05</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 57px; top: 282px; left: 215px; text-align: center;">0.10</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 57px; top: 282px; left: 291px; text-align: center;">0.15</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 57px; top: 282px; left: 366px; text-align: center;">0.20</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; inset: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 135px; left: 19px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 90px; left: 13px; text-align: right;">50</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 45px; left: 6px; text-align: right;">100</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 6px; text-align: right;">150</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 269px; left: 2px; text-align: right;">-150</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 224px; left: 2px; text-align: right;">-100</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 179px; left: 8px; text-align: right;">-50</div></div></div><canvas class="flot-overlay" width="400" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 400px; height: 300px;"></canvas><div class="legend"><div style="position: absolute; width: 63px; height: 62px; top: 13px; right: 19px; background-color: rgb(255, 255, 255); opacity: 0.85;"> </div><table style="position:absolute;top:13px;right:19px;;font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(255, 0, 0);overflow:hidden"></div></div></td><td class="legendLabel"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-29-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-190" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-191" class="mjx-mrow"><span id="MJXc-Node-192" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.226em; padding-bottom: 0.301em;">n</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></span></span><script type="math/tex" id="MathJax-Element-29">n</script></td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(0, 0,255);overflow:hidden"></div></div></td><td class="legendLabel"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-30-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-193" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-194" class="mjx-mrow"><span id="MJXc-Node-195" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.226em; padding-bottom: 0.449em;">p</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>p</mi></math></span></span><script type="math/tex" id="MathJax-Element-30">p</script></td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(0, 0, 0);overflow:hidden"></div></div></td><td class="legendLabel"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-31-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03C1;&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-196" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-197" class="mjx-mrow"><span id="MJXc-Node-198" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.226em; padding-bottom: 0.524em;">ρ</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ρ</mi></math></span></span><script type="math/tex" id="MathJax-Element-31">\rho</script></td></tr></tbody></table></div></div></td></tr>
+<tr><td></td><td><p style="text-align:center"><i>x</i> [μm]</p></td></tr></tbody></table>
+
+</td><td>
+
+<p style="text-align:center"><b>Electric field</b></p>
+<table align="center"><tbody><tr><td><p style="text-align:center"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-32-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="font-size: 101%; position: relative;"><span id="MJXc-Node-199" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-200" class="mjx-mrow"><span id="MJXc-Node-201" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.436em; padding-bottom: 0.251em; padding-right: 0.026em;">E</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>E</mi></math></span></span><script type="math/tex" id="MathJax-Element-32">E</script><br>[MV/m]</p></td><td><div id="placeholder_e" style="width: 400px; height: 300px; padding: 0px; position: relative;"><canvas class="flot-base" width="400" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 400px; height: 300px;"></canvas><div class="flot-text" style="position: absolute; inset: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; inset: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 57px; top: 282px; left: 55px; text-align: center;">0.00</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 57px; top: 282px; left: 132px; text-align: center;">0.05</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 57px; top: 282px; left: 210px; text-align: center;">0.10</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 57px; top: 282px; left: 288px; text-align: center;">0.15</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 57px; top: 282px; left: 366px; text-align: center;">0.20</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; inset: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 269px; left: 8px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 215px; left: 2px; text-align: right;">10</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 161px; left: 2px; text-align: right;">20</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 108px; left: 2px; text-align: right;">30</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 54px; left: 2px; text-align: right;">40</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 0px; left: 2px; text-align: right;">50</div></div></div><canvas class="flot-overlay" width="400" height="300" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 400px; height: 300px;"></canvas></div></td></tr>
+<tr><td></td><td><p style="text-align:center"><i>x</i> [μm]</p></td></tr></tbody></table>
+
+</td></tr></tbody></table>
+
+
+
+</div>
+   <!--simulation end -->
+   
+
+    <div class="container p-3 my-5 text-primary text-center border"><!--Last and fifth container under body tag start-->
+      <div class="row">
+        <footer>
+          <div class="row ce">
+            <div class="col-sm-12">
+              <p class="h5"><i> Copyright ©2022 <a href="http://vlabs.iitkgp.ac.in/vlt/">Virtual Labs IIT Kharagpur</a> </i><br><br>
+              <a href="../../license/index.html" target="_blank"> Licensing Terms </a>
+            </p>
+            </div>
           </div>
-        </div>
-        <div class="container ce">
-          <div class="row bg-secondary text-white p-3 my-3">
-            <div id="qqd" class="col-sm-3"></div>
-            <div class="col-sm-6"></div>
-            <!--<div  id="qqsc" class="col-sm-3"></div>-->
-            <div id="qqt" class="col-sm-3"></div>
-          </div>
-        </div>
+        </footer>
       </div>
-    </div>
+  </div><!--Last and fifth container under body tag end-->
 
-      <div class="container" id="cont">
-        <div class="row Insta ce">
-        <div class="col-sm-12">
-          <div class"container Inst">
-            <ol class="se">
-              <p class="ce Inst"><strong> Instructions</p> </strong>
-              <li class="se">Observe the block diagram </li>
-              <li class="se">Select the amplitide(A) of the input sine wave signal(x(t)).</li>
-              <li class="se">Select the frequency of the signal(f<sub>m</sub>) for the input signal(x(t)).</li>
-              <li class="se">Select the sampling frequency of the signal(f<sub>s</sub>).</li>
-              <li class="se">Click on the "Channel 1" buttton to observe the input signal x(t) on graph</li>
-              <li class="se">Click on the "Channel 2" to buttton observe the magnitude spectrum of input signal y(n) on graph</li>
-              <li class="se">Click on the "Dual" to observe the input signal and  magnitude spectrum of input signal on graph</li>
-              <li class="se">Change the values of A, f<sub>m</sub>, and f<sub>s</sub> to observe the variation in the input and output signals.</li>
-              <li>Hover on the graph to observe the value of the x(t) and y(n) at that instatnt of time T.</li>
-              <li>Save the graph if you are done with your experiment.</li>
-              <li><strong>
-                Note:
-                <ul>
-                  <li>Make sure always input signal amplitude(A) >0 v  </li>
-                  <li>Make sure always input signal frequency(f<sub>m</sub> and f<sub>s</sub>) >0 Hz  </li>
-                  <li>To change the values just scroll by hovering on the knob.</li>
-                  <li>Make sure that you kept equal time/div in the "Channel 1" and "Channel 2". </li>
-                </ul>
-                </strong>
-              </li>
-            </ol>
-          </div>
-        </div>
-      </div>
-            <div class="row Insta ce">
-                <div class="col-sm-12">
-                  <div class="container">
-                  <p class="ce"><b>Block Daigram</b></p>
-                      <div class="container blkc">
-                        <br>
-                        <div class="blk" id="b1"> <b>Signal <br> Generator </b>
-                        </div>
-                        <div class="blk" id="b3"> <b>Virtual <br> Scope </b>
-                        </div>
-                        <div class="blk" id="b2"> <b>Sampling <br> Block </b>
-                        </div>
-                        <div class="blk" id="b4"> <b>DFT <br> Block </b>
-                        </div>
-                        <br>
-                      </div>
-                    </div>
-                </div>
-              </div>
-            <br>
-            <div class="row Inst" id="pw">
-              <div class="col-md-12">
-                <div class="custom-control custom-switch ce">
-                  <h5><strong>Power</strong></h5>
-                  <input type="checkbox" class="custom-control-input" id="s1">
-                  <label class="custom-control-label" for="s1" style="background:red;" id="sn">Circuit OFF</label>
-                </div>
-              </div>
-              
-            </div>
-            <div class="row">
-              <div class="col-sm-12 Inst" id="grp">
-                  <div class="img-fluid" id="grph"> </div>
-              </div>
-            </div>
-            <div class="row fc" id="ctl">
-              <div class="col-sm-3 ">
-                <div class="fc ce">
-                  <div class="row">
-                    <div class="col-sm-12">
-                        <h6>Function Generator Controls</h6>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12 col-sm-6">
-                        <input class="preset1" type="range" min="0" max="10" value="1" data-width="80" data-height="80" data-angleOffset="220"
-                        data-angleRange="280" id="av">
-                        <br>
-                        <h6>V<sub>i</sub> = <span id="vi"></span> V </h6>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                      <input class="preset1 ce" type="range" min="0" max="10" step="1" data-width="80" data-height="80" data-angleOffset="220"
-                      data-angleRange="280" id="fv">
-                      <br>
-                        <h6>f<sub>m</sub> = <span id="f"></span> kHz</h6>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12 col-sm-6">
-                      <input class="preset1 ce" type="range" min="0" max="20" step="2" data-width="80" data-height="80" data-angleOffset="220"
-                      data-angleRange="280" id="fsv">
-                      <br>
-                        <h6>f<sub>s</sub> = <span id="fs"></span> kHz</h6>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-9 fc ce">
-                <div class="row">
-                  <div class="col-sm-12">
-                      <h6>Oscilloscope Controls</h6>
-                  </div>
-                </div>
-                <div class="row ce">
-                  <div class="col-sm-3">
-                  </div>
-                  <div class="col-sm-2 ce">
-                    <button type="button" class="btn btn-primary btn-sm" id="bc1"> <strong>Channel 1</strong></button>
-                  </div>
-                  <div class="col-sm-2">
-                    <button type="button" class="btn btn-primary btn-sm" id="bc2"> <strong>Channel 2</strong></button>
-                  </div>
-                  <div class="col-sm-2">
-                    <button type="button" class="btn btn-primary btn-sm" id="du"> <strong>Dual</strong></button>
-                  </div>
-                  <div class="col-sm-3">
-                  </div>
-                </div>
-                <div class="row fc ce">
-                  <div class="col-12 col-sm-6 ce fc">
-                      <h6>Channel 1</h6>
-                      <div class="row">
-                        <div class="col-12 col-sm-1">
-
-                        </div>
-                        <div class="col-12 col-sm-4">
-                          <input class="preset1" type="range" min="1" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280"  id="vc1v">
-                          <br>
-                          <h6>V<sub>c1</sub> = <span id="vc1"></span> V/div </h6>
-                        </div>
-                        <div class="col-12 col-sm-1">
-
-                        </div>
-                        <div class="col-12 col-sm-5">
-                          <input class="preset1" type="range" min="1" max="10" step="1" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280"  id="t1v">
-                          <br>
-                          <h6>Time = <span id="t1"></span> (ms)/div </h6>
-                        </div>
-                        <div class="col-12 col-sm-1">
-
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-12">
-                          <h6>Position</h6>
-                        </div>
-                      </div>
-                      <div class="row ce">
-                        <div class="col-12 col-sm-2">
-
-                        </div>
-                        <div class="col-12 col-sm-3">
-                          <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="px1v">
-                          <br>
-                          <h6>P<sub>X</sub> = <span id="px1"></span> </h6>
-                        </div>
-                        <div class="col-12 col-sm-2">
-
-                        </div>
-                          <div class="col-12 col-sm-3">
-                            <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="py1v">
-                            <br>
-                            <h6>P<sub>Y</sub> = <span id="py1"></span></h6>
-                          </div>
-                          <div class="col-12 col-sm-2">
-
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-12 col-sm-6 ce fc">
-                      <h6>Channel 2</h6>
-                      <div class="row">
-                        <div class="col-12 col-sm-1">
-
-                        </div>
-                        <div class="col-12 col-sm-4">
-                          <input class="preset1" type="range" min="1" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="vc2v">
-                          <br>
-                          <h6>V<sub>c2</sub> = <span id="vc2"></span> V/div </h6>
-                        </div>
-                        <div class="col-12 col-sm-1">
-
-                        </div>
-                        <div class="col-12 col-sm-5">
-                          <input class="preset1" type="range" min="1" max="10" step="1" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="t2v">
-                          <br>
-                          <h6>Time = <span id="t2"></span> (ms)/div </h6>
-                        </div>
-                        <div class="col-12 col-sm-1">
-
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-12">
-                          <h6>Position</h6>
-                        </div>
-                      </div>
-                      <div class="row ce">
-                        <div class="col-12 col-sm-2">
-
-                        </div>
-                        <div class="col-12 col-sm-3">
-                          <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="px2v">
-                          <br>
-                          <h6>P<sub>X</sub> = <span id="px2"></span> </h6>
-                        </div>
-                        <div class="col-12 col-sm-2">
-                        </div>
-                        <div class="col-12 col-sm-3">
-                          <input class="preset1" type="range" min="-5" max="5" data-width="80" data-height="80" data-angleOffset="220" data-angleRange="280" id="py2v">
-                          <br>
-                          <h6>P<sub>Y</sub> = <span id="py2"></span> </h6>
-                        </div>
-                        <div class="col-12 col-sm-2">
-
-                        </div>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-sm-12">
-              </div>
-            </div>
-      </div>
-
-      <!-- <div class="container">
-        <div class="row">
-          <div class="col-sm-12"> &nbsp; 
-            <h4>Developer and Integration Engineer:</h4>&nbsp;<br>
-                <div class="card" style="width:400px">
-                  <!--  <img class="card-img-top" src="adi.jpg" alt="Aditya image" style="width:100%"> -->
-                  <!-- <div class="card-body">
-                    <h6 class="card-title">Aditya Kameswara Rao Nandula</h6>
-                    <h7 class="card-text">Senior Research Fellow <br> Virtual Labs<br> IIT Kharagpur</h7>
-                    <!--  <a href="#" class="btn btn-primary">See Profile</a> -->
-                  </div> -->
-                <!-- </div>&nbsp;<br>
-            &nbsp; </div> -->
-        </div>
-      </div> -->
-
-      <div class="container">
-        <div class="jumbotron  ce">
-          <footer>
-            <div class="row ce">
-              <div class="col-sm-12">
-                <p><i> Copyright ©2021 Virtual labs IIT Kharagpur</i><br>
-                <a href="../../license/index.html" target="_blank"> Licensing Terms </a></p>
-              </div>
-            </div>
-          </footer>
-        </div>
-      </div>
-
-
-    </div>
-    <script type="text/javascript" src="./js/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/popper.min.js"></script>
-    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="./js/plotly.js"></script>
-    <script src="./js/plain-draggable.js"></script>
-    <script src="./js/leaderline.min.js"></script>
-    <script src="./js/d3.v5.js"></script>
-    <script src="./dsp.js"></script>
-    <script type="text/javascript" src="./js/adidspex6s.js"></script>
-    <script type="text/javascript" src="./js/knob.js"></script>
-    <script type="text/javascript" src="./js/ui.js"></script>
-    <script type="text/javascript" src="./js/ui.el.js"></script>
-    <script type="text/javascript" src="./js/p1.js"></script>
-    <script type="text/javascript" src="./js/adik.js"></script>
-    <script type="text/javascript" src="./js/tex-chtml-full.js"> </script>
-          <svg>
-              <filter id="dropshadow" height="150%" width="150%">
-                  <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
-                  <feOffset dx="0" dy="3" result="offsetblur"/>
-                  <feMerge>
-                      <feMergeNode/>
-                      <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-              </filter>
-          </svg>
-  </body>
-</html>
+  
+	 
+</body><!--body tag end-->
+</html><!--html tag end-->
