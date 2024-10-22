@@ -1,9 +1,9 @@
 ## References
 #### Books
--Discrete-Time Signal Processing, A. V. Oppenheim and R. W. Schafer, Englewood Cliffs, NJ: Prentice Hall, 1989.
--2.C. E. Shannon, "Communication in the presence of noise," Proc. Institute of Radio Engineers, vol. 37, no. 1, pp. 10-21, Jan 1949.
--3.H. Nyquist, "Certain topics in telegraph transmission theory," Trans. AIEE, vol. 47, pp. 617-644, Apr 1928.
+1) Christian C. Enz and Eric A. Vittoz, Charge-Based MOS Transistor Modeling: The EKV model for low-power and RF IC design, Wiley, 2006
+
+2) S. M. Sze and Kwok K. Ng, Physics of Semiconductor Devices, Wiley, 2006
 
 #### Video Lectures
-- [Digital Signal Processing Introduction](https://nptel.ac.in/)
+- [MOS capacitor](https://www.youtube.com/watch?v=Gwyi2brc0QQ)
 
