@@ -25,12 +25,12 @@ To calculate the band bending, we start with Gauss's law,
 
 $$\\begin{equation} \\nabla \\cdot \\vec{E} = \\frac{\\rho}{\\epsilon\_s\\epsilon\_0}. \\end{equation}$$
 
-$$Combining \ this \ with \  ⃗E\=−∇VE→\=−∇V\\vec{E}=-\\nabla V \ yields \ the \ Poisson \ equation,$$
+$$Combining \ this \ with \ \\vec{E}=-\\nabla V \ yields \ the \ Poisson \ equation,$$
 
 $$\\begin{equation} \\nabla^2V = -\\frac{\\rho}{\\epsilon\_s\\epsilon\_0}, \\end{equation}$$
 
 where, for a MOS capacitor with a p-type substrate, the charge density is 
-$$ρ\=e(−NA−n+p)ρ\=e(−NA−n+p)\\rho = e\\left(-N\_A-n+p\\right)$$ and the charge carrier concentrations are,
+$$\\rho = e\\left(-N\_A-n+p\\right)$$ and the charge carrier concentrations are,
 
 
 $$\\begin{equation} n=N\_c(300)\\left(\\frac{T}{300}\\right)^{3/2}\\exp\\left(\\frac{E\_F-E\_c}{k\_BT}\\right)\\qquad \\text{and}\\qquad p=N\_v(300)\\left(\\frac{T}{300}\\right)^{3/2}\\exp\\left(\\frac{E\_v-E\_F}{k\_BT}\\right). \\end{equation}$$
