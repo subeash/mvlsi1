@@ -19,7 +19,7 @@
 <b> Institute | <b>  **Indian Institute of Technology Kharagpur**
 <b> Email id|     <b>  **ckm@ece.iitkgp.ernet.in**
 <b> Department |  **Electronics & Electrical Communication Engineering**
-<b>Webpage| <b> https://www.iitkgp.ac.in/department/EC/faculty/ec-gsaha
+<b>Webpage| <b> https://www.iitkgp.ac.in/search-result/Chinmay%20Kumar%20Maiti
 
 
 
