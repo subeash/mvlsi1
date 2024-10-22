@@ -1,6 +1,6 @@
 ## Procedure
-![](./images/peq.jpg) 
-<img src="images/exp6_1.png"  />
+
+<img src="images/peq.jpg"  />
   
 **Fig. 1. Gradual channel approximation**
 
