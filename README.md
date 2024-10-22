@@ -7,7 +7,7 @@
 <b>Discipline | <b> Electronic Engineering 
 :--|:--|
 <b> Lab | <b> **Microelectronics and VLSI Engineering Laboratory**
-<b> Experiment|     <b> **MOS Capacitor**
+<b> Experiment|     <b> **PMOS Capacitor Band Diagram**
 
 
 ### About the Experiment 
@@ -27,6 +27,5 @@
 
 SrNo | Name | VLabs Developer or Integration Engineer | Designation | Department| Institute
 :--|:--|:--|:--|:--|:--|
-1 | **Debasish Das Adhikary** |Developer | Junior Project Assistant | Department of Mechanical Engineering | IIT Kharagpur |
-2 | **Aditya Kameswara Rao Nandula** |Developer | Senior Project Scientist | Department of Mechanical Engineering | IIT Kharagpur | 
-3 | **Subhasis Mahata** |AWS Integration Engineer | Senior Project Scientist | Department of Mechanical Engineering | IIT Kharagpur | 
+1 | **Ananda Maiti** |Developer | Project intern | Department of Mechanical Engineering | IIT Kharagpur |
+2 | **Subhasis Mahata** |AWS Integration Engineer | Senior Project Scientist | Department of Mechanical Engineering | IIT Kharagpur | 
